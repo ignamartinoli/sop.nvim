@@ -84,4 +84,5 @@ git clone --depth 1 'https://github.com/wbthomason/packer.nvim' "$HOME/.local/sh
 
 echo 'E'
 
-# TODO: git vs curl
+mkdir -p ~/.config/nvim/lua
+wget -O ~/.config/nvim/lua/init.lua https://raw.githubusercontent.com/ignamartinoli/sop.nvim/master/init.lua

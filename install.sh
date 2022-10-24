@@ -82,4 +82,4 @@ fi
 
 nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 
-echo '-=-=-=-=-=[ INSTALLATION FINISHED ]=-=-=-=-=-'
+echo '\n-=-=-=-=-=[ INSTALLATION FINISHED ]=-=-=-=-=-'

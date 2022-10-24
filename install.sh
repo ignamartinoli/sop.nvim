@@ -2,14 +2,10 @@
 # Copyright 2022 ignamartinoli. GPL license.
 set -euo
 
-echo 'A'
-
 if [ "$(uname -sm)" != 'Linux x86_64' ]; then
 	>&2 echo 'Unsupported platform.'
 	exit
 fi
-
-echo 'B'
 
 if [ -x "$(command -v sudo)" ];
 	then ADMIN='sudo'
@@ -52,11 +48,9 @@ fi
 #
 # packages - FreeBSD 10.0+: pkg install pkg
 
-echo 'C'
-
 PACKAGES='git npm neovim'
 
-if   [ -x "$(command -v apt-get)" ];      then $ADMIN apt-get -y install $PACKAGES
+if   [ -x "$(command -v apt-get)" ];      then $ADMIN apt-get -y install $PACKAGES # Ok
 elif [ -x "$(command -v zypper)" ];       then $ADMIN zypper install $PACKAGES
 elif [ -x "$(command -v dnf)" ];          then $ADMIN dnf install $PACKAGES
 elif [ -x "$(command -v urpmi)" ];        then $ADMIN urpmi $PACKAGES
@@ -74,15 +68,18 @@ elif [ -x "$(command -v pkg)" ];          then $ADMIN pkg install $PACKAGES
 else >&2 echo 'Unsupported package manager.'
 fi
 
-echo 'D'
-
 git clone --depth 1 'https://github.com/wbthomason/packer.nvim' "$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim"
 
-echo 'E'
-
-# curl -fsSL ? | sh
-# wget -O - ?
-# TODO: Check which is installed
-
 mkdir -p ~/.config/nvim
-wget -O ~/.config/nvim/init.lua https://raw.githubusercontent.com/ignamartinoli/sop.nvim/master/init.lua
+
+if [ -x "$(command -v wget)" ];
+	then wget -O "$HOME/.config/nvim/init.lua" 'https://raw.githubusercontent.com/ignamartinoli/sop.nvim/master/init.lua'
+elif [ -x "$(command -v doas)" ];
+	then curl -o "$HOME/.config/nvim/init.lua" 'https://raw.githubusercontent.com/ignamartinoli/sop.nvim/master/init.lua'
+else
+	>&2 echo 'Unsupported installation method.'
+fi
+
+echo '-=-=-=-=-=[ INSTALLATION FINISHED ]=-=-=-=-=-'
+echo 'Now open Neovim with the `nvim` command and'
+echo 'type `:PackerSync`'

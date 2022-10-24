@@ -11,5 +11,5 @@ wget -O - 'https://raw.githubusercontent.com/ignamartinoli/sop.nvim/master/insta
 or
 
 ```bash
-# curl -fsSL 'https://raw.githubusercontent.com/ignamartinoli/sop.nvim/master/install.sh' | sh
+curl -fsSL 'https://raw.githubusercontent.com/ignamartinoli/sop.nvim/master/install.sh' | sh
 ```

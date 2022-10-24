@@ -84,5 +84,5 @@ echo 'E'
 # wget -O - ?
 # TODO: Check which is installed
 
-mkdir -p ~/.config/nvim/lua
-wget -O ~/.config/nvim/lua/init.lua https://raw.githubusercontent.com/ignamartinoli/sop.nvim/master/init.lua
+mkdir -p ~/.config/nvim
+wget -O ~/.config/nvim/init.lua https://raw.githubusercontent.com/ignamartinoli/sop.nvim/master/init.lua

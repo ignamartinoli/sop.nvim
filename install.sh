@@ -80,6 +80,6 @@ else
 	>&2 echo 'Unsupported installation method.'
 fi
 
+nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+
 echo '-=-=-=-=-=[ INSTALLATION FINISHED ]=-=-=-=-=-'
-echo 'Now open Neovim with the `nvim` command and'
-echo 'type `:PackerSync`'

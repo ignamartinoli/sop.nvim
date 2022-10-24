@@ -54,7 +54,7 @@ fi
 
 echo 'C'
 
-PACKAGES='git npm nvim'
+PACKAGES='git npm neovim'
 
 if   [ -x "$(command -v apt-get)" ];      then $ADMIN apt-get install "$PACKAGES"
 elif [ -x "$(command -v zypper)" ];       then $ADMIN zypper install "$PACKAGES"

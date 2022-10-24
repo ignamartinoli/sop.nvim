@@ -56,21 +56,21 @@ echo 'C'
 
 PACKAGES='git npm neovim'
 
-if   [ -x "$(command -v apt-get)" ];      then $ADMIN apt-get install "$PACKAGES"
-elif [ -x "$(command -v zypper)" ];       then $ADMIN zypper install "$PACKAGES"
-elif [ -x "$(command -v dnf)" ];          then $ADMIN dnf install "$PACKAGES"
-elif [ -x "$(command -v urpmi)" ];        then $ADMIN urpmi "$PACKAGES"
-elif [ -x "$(command -v slackpkg)" ];     then $ADMIN slackpkg install "$PACKAGES"
-elif [ -x "$(command -v slapt-get)" ];    then $ADMIN slapt-get --install "$PACKAGES"
-elif [ -x "$(command -v netpkg)" ];       then $ADMIN netpkg "$PACKAGES"
-elif [ -x "$(command -v equo)" ];         then $ADMIN equo install "$PACKAGES"
-elif [ -x "$(command -v pacman)" ];       then $ADMIN pacman -Sy "$PACKAGES"
-elif [ -x "$(command -v eopkg)" ];        then $ADMIN eopkg install "$PACKAGES"
-elif [ -x "$(command -v apk)" ];          then $ADMIN apk add "$PACKAGES"
-elif [ -x "$(command -v emerge)" ];       then $ADMIN emerge "$PACKAGES"
-elif [ -x "$(command -v nix-env)" ];      then $ADMIN nix-env -i "$PACKAGES"
-elif [ -x "$(command -v xbps-install)" ]; then $ADMIN xbps-install "$PACKAGES"
-elif [ -x "$(command -v pkg)" ];          then $ADMIN pkg install "$PACKAGES"
+if   [ -x "$(command -v apt-get)" ];      then $ADMIN apt-get install $PACKAGES
+elif [ -x "$(command -v zypper)" ];       then $ADMIN zypper install $PACKAGES
+elif [ -x "$(command -v dnf)" ];          then $ADMIN dnf install $PACKAGES
+elif [ -x "$(command -v urpmi)" ];        then $ADMIN urpmi $PACKAGES
+elif [ -x "$(command -v slackpkg)" ];     then $ADMIN slackpkg install $PACKAGES
+elif [ -x "$(command -v slapt-get)" ];    then $ADMIN slapt-get --install $PACKAGES
+elif [ -x "$(command -v netpkg)" ];       then $ADMIN netpkg $PACKAGES
+elif [ -x "$(command -v equo)" ];         then $ADMIN equo install $PACKAGES
+elif [ -x "$(command -v pacman)" ];       then $ADMIN pacman -Sy $PACKAGES
+elif [ -x "$(command -v eopkg)" ];        then $ADMIN eopkg install $PACKAGES
+elif [ -x "$(command -v apk)" ];          then $ADMIN apk add $PACKAGES
+elif [ -x "$(command -v emerge)" ];       then $ADMIN emerge $PACKAGES
+elif [ -x "$(command -v nix-env)" ];      then $ADMIN nix-env -i $PACKAGES
+elif [ -x "$(command -v xbps-install)" ]; then $ADMIN xbps-install $PACKAGES
+elif [ -x "$(command -v pkg)" ];          then $ADMIN pkg install $PACKAGES
 else >&2 echo 'Unsupported package manager.'
 fi
 

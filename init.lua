@@ -150,7 +150,9 @@ return require 'packer'.startup(function ()
 			{
 				'williamboman/mason-lspconfig.nvim',
 				after = 'mason.nvim',
-				config = function () require 'mason-lspconfig'.setup { automatic_installation = true } end
+				config = function () require 'mason-lspconfig'.setup {
+					ensure_installed = { 'bashls', 'pyright', 'sumneko_lua' }
+				} end
 			}
 		}
 	}

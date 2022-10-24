@@ -312,19 +312,14 @@ return require 'packer'.startup(function ()
 				sections = {
 					lualine_b = { 'diagnostics' },
 					lualine_x = { 'location' },
-					lualine_y = {
-						{
-							'filetype', icon = { '' }
-						}
-					},
+					lualine_y = { 'progress' },
 					lualine_z = { 'filename' }
 				},
 				inactive_sections = {}
 			}
 
 			vim.opt.showmode = false
-		end,
-		requires = 'kyazdani42/nvim-web-devicons'
+		end
 	}
 
 	-- Indent

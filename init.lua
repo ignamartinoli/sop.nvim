@@ -102,6 +102,13 @@ return require 'packer'.startup(function ()
 					}
 				}
 			}
+				
+			vim.diagnostic.config {
+				float = { header = '', prefix = '' },
+				severity_sort = true,
+				virtual_text = false
+			}
+
 
 			vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
 				pattern = '*',

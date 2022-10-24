@@ -56,7 +56,7 @@ echo 'C'
 
 PACKAGES='git npm neovim'
 
-if   [ -x "$(command -v apt-get)" ];      then $ADMIN apt-get install $PACKAGES
+if   [ -x "$(command -v apt-get)" ];      then $ADMIN apt-get -y install $PACKAGES
 elif [ -x "$(command -v zypper)" ];       then $ADMIN zypper install $PACKAGES
 elif [ -x "$(command -v dnf)" ];          then $ADMIN dnf install $PACKAGES
 elif [ -x "$(command -v urpmi)" ];        then $ADMIN urpmi $PACKAGES
@@ -74,15 +74,15 @@ elif [ -x "$(command -v pkg)" ];          then $ADMIN pkg install $PACKAGES
 else >&2 echo 'Unsupported package manager.'
 fi
 
-# Administrador de paquetes
-
 echo 'D'
 
 git clone --depth 1 'https://github.com/wbthomason/packer.nvim' "$HOME/.local/share/nvim/site/pack/packer/start/packer.nvim"
 
-# Config file
-
 echo 'E'
+
+# curl -fsSL ? | sh
+# wget -O - ?
+# TODO: Check which is installed
 
 mkdir -p ~/.config/nvim/lua
 wget -O ~/.config/nvim/lua/init.lua https://raw.githubusercontent.com/ignamartinoli/sop.nvim/master/init.lua

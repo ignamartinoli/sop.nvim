@@ -102,7 +102,18 @@ return require 'packer'.startup(function ()
 					}
 				}
 			}
-				
+
+			local signs = {
+				DiagnosticSignError = 'E',
+				DiagnosticSignHint = 'H',
+				DiagnosticSignInfo = 'I',
+				DiagnosticSignWarn = 'W'
+			}
+			for type, icon in pairs(signs) do
+				vim.fn.sign_define(type, { text = icon, texthl = type, linehl = type, numhl = type })
+			end
+
+			
 			vim.diagnostic.config {
 				float = { header = '', prefix = '' },
 				severity_sort = true,

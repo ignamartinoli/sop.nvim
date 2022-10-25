@@ -1,8 +1,8 @@
 # The SOP Neovim quickstart distribution
 
-## Installation 
+## Installation
 
-To install, run 
+To install, run either
 
 ```bash
 wget -O - 'https://raw.githubusercontent.com/ignamartinoli/sop.nvim/master/install.sh' | sh
@@ -13,3 +13,11 @@ or
 ```bash
 curl -fsSL 'https://raw.githubusercontent.com/ignamartinoli/sop.nvim/master/install.sh' | sh
 ```
+
+## Dependencies
+
+**[TODO]**
+
+## Mappings
+
+**[TODO]**

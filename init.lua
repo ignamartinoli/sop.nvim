@@ -147,11 +147,16 @@ return require 'packer'.startup(function ()
 		requires = {
 			'hrsh7th/cmp-nvim-lsp',
 			{ 'williamboman/mason.nvim', config = function () require 'mason'.setup() end },
+			{ 'williamboman/mason-lspconfig.nvim', after = 'mason.nvim', config = function () require 'mason-lspconfig'.setup() end },
 			{
-				'williamboman/mason-lspconfig.nvim',
-				after = 'mason.nvim',
-				config = function () require 'mason-lspconfig'.setup {
-					ensure_installed = { 'bashls', 'pyright', 'sumneko_lua' }
+				'WhoIsSethDaniel/mason-tool-installer.nvim',
+				config = function () require 'mason-tool-installer'.setup {
+					ensure_installed = {
+						{ 'bash-language-server', auto_update = true },
+						{ 'lua-language-server', auto_update = true },
+						{ 'pyright', auto_update = true },
+						{ 'shellcheck', auto_update = true }
+					}
 				} end
 			}
 		}

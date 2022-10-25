@@ -36,12 +36,6 @@ vim.opt.termguicolors = true
 
 vim.keymap.set('i', '<C-BS>', [[<C-W>]], { noremap = true })
 
--- Close and move between buffers
-
-vim.keymap.set('n', '<BS>', [[:bd<CR>]], { silent = true })
-vim.keymap.set('n', '<Tab>', [[:bnext<CR>]], { silent = true })
-vim.keymap.set('n', '<S-Tab>', [[:bprevious<CR>]], { silent = true })
-
 -- Softens undo
 
 vim.keymap.set('i', ',', [[,<C-g>u]])

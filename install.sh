@@ -83,6 +83,6 @@ fi
 nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 
 # HACK:
-nvim --headless -c 'MasonInstall shellcheck'
+nvim --headless -c 'MasonInstall shellcheck' -c 'q'
 
 echo '\n-=-=-=-=-=[ INSTALLATION FINISHED ]=-=-=-=-=-'

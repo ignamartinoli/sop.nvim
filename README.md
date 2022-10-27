@@ -20,13 +20,13 @@ curl -fsSL 'https://raw.githubusercontent.com/ignamartinoli/sop.nvim/master/inst
 - [`doas`](https://man.openbsd.org/doas) or [`sudo`](https://www.sudo.ws)
 - [`git`](https://git-scm.com)
 - [`npm`](https://www.npmjs.com)
-- A supported package manager (**TODO** list them)
+- A supported package manager (**TODO:** list them)
 
 ## Mappings
 
-- `<C-d>`: center screen
-- `ga`: code actions
-- `gd`: get diagnostics
-- `gi`: get implementations
-- `gr`: get references
-- `K`: documentation
+- `<C-d>` center screen
+- `ga` code actions
+- `gd` get diagnostics
+- `gi` get implementations
+- `gr` get references
+- `K` documentation

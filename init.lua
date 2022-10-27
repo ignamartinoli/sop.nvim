@@ -130,7 +130,6 @@ return require 'packer'.startup(function ()
 						vim.keymap.set('n', 'gd', function () require 'telescope.builtin'.diagnostics() end)
 						vim.keymap.set('n', 'gi', function () require 'telescope.builtin'.lsp_implementations() end)
 						vim.keymap.set('n', 'gr', function () require 'telescope.builtin'.lsp_references() end)
-						vim.keymap.set('n', 'gs', function () require 'telescope.builtin'.spell_suggest() end)
 						vim.keymap.set('n', 'K', vim.lsp.buf.hover)
 					end
 				})

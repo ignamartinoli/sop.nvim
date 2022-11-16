@@ -203,7 +203,6 @@ return require 'packer'.startup(function ()
 						name = 'luasnip',
 						option = { use_show_condition = false }
 					},
-					{ name = 'neorg' },
 					{ name = 'path' },
 					{ name = 'buffer' }
 				},
